@@ -1,0 +1,17 @@
+h1
+{
+  color: rgb(238, 197, 17);
+}
+
+body
+{
+  background-color: moccasin;
+}
+
+div {
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 80px;
+  }
+

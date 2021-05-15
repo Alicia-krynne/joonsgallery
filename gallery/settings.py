@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'images.apps.ImagesConfig',
     'bootstrap4',
+    #'location_field.apps.DefaultConfig',
 ]
 
 MIDDLEWARE = [
@@ -79,7 +80,11 @@ WSGI_APPLICATION = 'gallery.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': 'gallery',
+        'USER': 'macrine',
+        'PASSWORD':'Alicemacrine!',
+        'HOST': 'localhost',
+        'POST': '',
     }
 }
 
@@ -129,3 +134,12 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+# LOCATION_FIELD = {
+# 'provider.google.api': '//maps.google.com/maps/api/js?sensor=false',
+# 'provider.google.api_key': 'AIzaSyB86zQyaeE348zolq6b8FjoS4UPvUaPrww',
+# 'provider.google.api_libraries': '',
+# 'provider.google.map.type': 'ROADMAP',
+# }

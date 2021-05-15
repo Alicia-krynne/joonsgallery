@@ -1,4 +1,7 @@
 from django.db import models
+# from location_field.models.plain import PlainLocationField
+# from django.contrib.gis.geos import Point
+from django import forms
 
 # Create your models here.
 
@@ -18,8 +21,7 @@ class Images(models.Model):
     image= models.ImageField(upload_to="gallery/")
     title=models.CharField(max_length=200)
     description= models.TextField(max_length=600)
-    category = models.ManyToManyField() 
-    location= models.ForeignKey()
+    Category = models.CharField(max_length=200)
     user = models.ForeignKey(User,on_delete=models.CASCADE) 
     
    
@@ -28,7 +30,13 @@ class Images(models.Model):
         return self.title
 
 class Category(models.Model):
-    category = models.CharField(max_length =100)
+    Category = models.ManyToManyField(Images)
 
     def __str__(self):
-        return self.name
+        return self.name 
+
+
+# class Address(forms.Form):
+#   city = forms.CharField()
+#   location = PlainLocationField(based_fields=['city'],
+#   initial=Point(-49.1607606, -22.2876834))

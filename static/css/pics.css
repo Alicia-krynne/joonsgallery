@@ -15,3 +15,239 @@ div {
   padding-left: 80px;
   }
 
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #eb6eeb;
+  color: white;
+}
+body {
+	letter-spacing:1px;
+}
+body,button,input,select,textarea {
+	color:#666666;
+	font-family:inherit;
+	font-size:14px;
+	line-height:1.8;
+	word-wrap:break-word;
+	-webkit-hyphens:auto;
+	 -moz-hyphens:auto;
+	 -ms-hyphens:auto;
+			hyphens:auto;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-weight:700;
+	margin-top:20px;
+	margin-bottom:10px;
+}
+h1 {
+	font-size:36px;
+}
+h2 {
+	font-size:30px;
+}
+h3 {
+	font-size:24px;
+}
+h4 {
+	font-size:18px;
+}
+h5 {
+	font-size:14px;
+}
+h6 {
+	font-size:12px;
+}
+p {
+	margin-bottom:1.5em;
+}
+p:last-child {
+	margin-bottom:0;
+}
+
+button,input,select,textarea {
+	font-size:100%;
+	/* Corrects font size not being inherited in all browsers */
+	margin:0;
+	/* Addresses margins set differently in IE6/7,F3/4,S5,Chrome */
+	vertical-align:baseline;
+	/* Improves appearance and consistency in all browsers */
+}
+button,input[type="button"],input[type="reset"],input[type="submit"] {
+	border:1px solid #ccc;
+	border-radius:0px;
+	background:#ccc;
+	color:#fff;
+	cursor:pointer;
+	/* Improves usability and consistency of cursor style between image-type 'input' and others */
+	-webkit-appearance:button;
+	/* Corrects inability to style clickable 'input' types in iOS */
+	padding:3px 15px;
+}
+button:hover,input[type="button"]:hover,input[type="reset"]:hover,input[type="submit"]:hover {
+	opacity:0.6;
+}
+input[type="checkbox"],input[type="radio"] {
+	padding: 0;
+	/* Addresses excess padding in IE8/9 */
+}
+input[type="search"] {
+	-webkit-appearance:textfield;
+	/* Addresses appearance set to searchfield in S5,Chrome */
+	-webkit-box-sizing:content-box;
+	/* Addresses box sizing set to border-box in S5,Chrome (include -moz to future-proof) */
+	-moz-box-sizing:content-box;
+	box-sizing:content-box;
+}
+input[type="search"]::-webkit-search-decoration {
+	/* Corrects inner padding displayed oddly in S5,Chrome on OSX */
+	-webkit-appearance:none;
+}
+button::-moz-focus-inner,input::-moz-focus-inner {
+	/* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
+	border:0;
+	padding:0;
+}
+input[type="text"],input[type="email"],input[type="url"],input[type="password"],input[type="search"],textarea {
+	border:1px solid #ccc;
+	border-radius:0px;
+	color:#666;
+}
+input[type="text"]:focus,input[type="email"]:focus,input[type="url"]:focus,input[type="password"]:focus,input[type="search"]:focus,textarea:focus {
+	color:#111;
+}
+input[type="text"],input[type="email"],input[type="url"],input[type="password"],input[type="search"],input[type="tel"] {
+	padding:6px;
+	border: 1px solid #ccc;
+}
+textarea {
+	overflow:auto;
+	/* Removes default vertical scrollbar in IE6/7/8/9 */
+	padding:5px;
+	vertical-align:top;
+	/* Improves readability and alignment in all browsers */
+	width:98%;
+}
+
+.menu {
+	display:table;
+	margin:0 auto;
+}
+.main-navigation {
+	background-color:#fff;
+	font-size:14px;
+	font-weight:700;
+	letter-spacing:1px;
+	padding:15px 0;
+	border-top:1px solid;
+	border-bottom:1px solid;
+	text-transform:uppercase;
+}
+.main-navigation a {
+		text-decoration:none;
+}
+.main-navigation ul {
+	list-style:none;
+	margin:0 auto;
+	padding:3px 0;
+}
+.main-navigation li {
+	display:inline;
+	float:left;
+	margin:0 1em;
+	position:relative;
+}
+.main-navigation ul ul {
+	display:none;
+	text-transform:none;
+	box-shadow:none;
+	opacity:0.9;
+	float:left;
+	left:-1em;
+	padding:0.5em 1em;
+	position:absolute;
+	top:1.5em;
+	z-index:99999;
+	padding-top:35px;
+	transition:all 0.3s;
+	font-weight:400;
+  background-color:#fff;
+}
+.main-navigation ul ul li {
+	margin:0;
+	width:150px;
+}
+.main-navigation ul li:hover>ul {
+	display: block;
+}
+/* Small menu */
+.menu-toggle {
+	display: none;
+}
+@font-face {
+	font-family:'Genericons';
+	src:url('fonts/genericons-regular-webfont.eot');
+	src:url('fonts/genericons-regular-webfont.eot?#iefix') format('embedded-opentype'),url('fonts/genericons-regular-webfont.woff') format('woff'),url('fonts/genericons-regular-webfont.ttf') format('truetype'),url('fonts/genericons-regular-webfont.svg#genericonsregular') format('svg');
+	font-weight:normal;
+	font-style:normal;
+}
+@font-face {
+	font-family:'behance';
+	src:url('fonts/behance.eot?61221480');
+	src:url('fonts/behance.eot?61221480#iefix') format('embedded-opentype'),url('fonts/behance.woff?61221480') format('woff'),url('fonts/behance.ttf?61221480') format('truetype'),url('fonts/behance.svg?61221480#behance') format('svg');
+	font-weight:normal;
+	font-style: normal;
+}
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.contact {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}

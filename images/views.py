@@ -6,4 +6,4 @@ from django.http  import HttpResponse
 # Create your views here.
 def my_gallery(request):
     images = Images.my_gallery()
-    return render(request, 'pics/my_gallery.html', {"images":images})
+    return render(request, 'pics/home.html', {"images":images})

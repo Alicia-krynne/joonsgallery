@@ -29,6 +29,11 @@ class Images(models.Model):
     def __str__(self):
         return self.title
 
+    @classmethod
+    def my_gallery(cls):
+        images = cls.objects
+        return images
+
 class Category(models.Model):
     Category = models.ManyToManyField(Images)
 

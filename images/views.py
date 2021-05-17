@@ -9,13 +9,13 @@ def my_gallery(request):
     images = Images.my_gallery()
     return render(request, 'pics/home.html', {"images":images})
 
-def show_images(request,images_title):
+def show_images(request):
    
     try:
-        images = Images.objects.get(id = images_title)
+        images = Images.objects.all()
     except Images.DoesNotExist:
         raise Http404()
-    return render(request,"all-news/my_gallery.html", {"images":images})
+    return render(request,"pics/my_gallery.html", {"images":images})
    
    
 def search_results(request):
@@ -30,5 +30,12 @@ def search_results(request):
     else:
         message = "You haven't searched for any term"
         return render(request, 'all-news/search.html',{"message":message})
+
+def gallery(request,images_id):
+    try:
+        gallery = Images.objects.get(id = images_id)
+    except Images.DoesNotExist:
+        raise Http404()
+    return render(request,"pics/my_gallery.html", {"gallery":images})
 
    

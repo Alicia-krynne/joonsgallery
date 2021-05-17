@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import  User,Images,Category
+from .models import  Category, Location, User,Images
 # Register your models here.
 
 
@@ -9,6 +9,8 @@ from .models import  User,Images,Category
 
 admin.site.register(User)
 admin.site.register(Images)
+admin.site.register(Location)
 admin.site.register(Category)
+
 
 #admin.site.register (Address)

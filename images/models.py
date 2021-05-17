@@ -1,3 +1,5 @@
+from django.db.models.fields import CharField
+import images
 from django.db import models
 # from location_field.models.plain import PlainLocationField
 # from django.contrib.gis.geos import Point
@@ -18,14 +20,14 @@ class User(models.Model):
 
 
 class Images(models.Model):
-    image= models.ImageField(upload_to="gallery/")
+    image= models.ImageField(upload_to="media/")
     title=models.CharField(max_length=200)
     description= models.TextField(max_length=600)
-    Category = models.CharField(max_length=200)
+    category = models.ForeignKey('Category',on_delete=models.CASCADE,null=False)
+    location = models.ForeignKey('Location',on_delete=models.CASCADE,null=False)
     user = models.ForeignKey(User,on_delete=models.CASCADE) 
     
    
-
     def __str__(self):
         return self.title
 
@@ -34,11 +36,28 @@ class Images(models.Model):
         images = cls.objects
         return images
 
-class Category(models.Model):
-    Category = models.ManyToManyField(Images)
+    @classmethod
+    def show_images(cls):
+        images=Images.objects.all()
+        return images
+
+    @classmethod
+    def search_by_title(cls,search_term):
+        images= cls.objects.filter(title__icontains=search_term)
+        return images
+
+class Category(models.Model): 
+    category= models.CharField(max_length=200,null=False)
 
     def __str__(self):
-        return self.name 
+        return self.category
+
+class Location(models.Model): 
+    location= models.CharField(max_length=200,null=False)
+
+    def __str__(self):
+        return self.location
+
 
 
 # class Address(forms.Form):

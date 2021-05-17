@@ -1,3 +1,4 @@
+from django.db.models.deletion import  SET_DEFAULT, SET_NULL
 from django.db.models.fields import CharField
 import images
 from django.db import models
@@ -23,8 +24,8 @@ class Images(models.Model):
     image= models.ImageField(upload_to="media/")
     title=models.CharField(max_length=200)
     description= models.TextField(max_length=600)
-    category = models.ForeignKey('Category',on_delete=models.CASCADE,null=False)
-    location = models.ForeignKey('Location',on_delete=models.CASCADE,null=False)
+    category = models.ForeignKey('Category',models.SET_NULL,null=True)
+    location = models.ForeignKey('Location',models.SET_NULL,null=True)
     user = models.ForeignKey(User,on_delete=models.CASCADE) 
     
    
@@ -47,13 +48,13 @@ class Images(models.Model):
         return images
 
 class Category(models.Model): 
-    category= models.CharField(max_length=200,null=False)
+    category= models.CharField(max_length=200)
 
     def __str__(self):
         return self.category
 
 class Location(models.Model): 
-    location= models.CharField(max_length=200,null=False)
+    location= models.CharField(max_length=200)
 
     def __str__(self):
         return self.location

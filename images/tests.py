@@ -26,10 +26,7 @@ class ImagesTestClass(TestCase):
         self.macrine= User(first_name = 'Macrine', last_name ='Alice', email ='alicakrynne@outlook.com')
         self.macrine.save_user()
 
-        # Creating a new category and saving it
-        self.new_category = Category(name = 'testing')
-        self.new_category.save()
-
+    
         self.new_image= Images(title = 'Test Images',post = 'This is a random test Post',editor = self.macrine)
         self.new_image.save()
 
@@ -37,7 +34,6 @@ class ImagesTestClass(TestCase):
 
     def tearDown(self):
         User.objects.all().delete()
-        Category.objects.all().delete()
         Images.objects.all().delete()
 
 def test_save_image(self):

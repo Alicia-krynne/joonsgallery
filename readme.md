@@ -4,7 +4,7 @@ MACRINE ALICE ADHIAMBO "ALICIA"[https://github.com/Alicia-krynne]
 
 Description
 This is an apllication that allows users to   add images of their  favorite things and display them in a gallery. 
-
+![joons Gallery](https://user-images.githubusercontent.com/78471467/118485460-248dab00-b721-11eb-8b09-c8dd2ea4146d.png)
 
 CLONNG THE  REPOSITORY:
 https://github.com/Alicia-krynne/joonsgallery

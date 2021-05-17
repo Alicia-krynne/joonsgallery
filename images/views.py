@@ -25,11 +25,11 @@ def search_results(request):
         searched_images = Images.search_by_title(search_term)
         message = f"{search_term}"
 
-        return render(request, 'all-news/search.html',{"message":message,"gallery": searched_images})
+        return render(request, 'pics/search.html',{"message":message,"gallery": searched_images})
 
     else:
         message = "You haven't searched for any term"
-        return render(request, 'all-news/search.html',{"message":message})
+        return render(request, 'pics/search.html',{"message":message})
 
 def gallery(request,images_id):
     try:

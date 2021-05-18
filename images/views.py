@@ -2,6 +2,7 @@ import images
 from images.models import Images
 from django.shortcuts import render
 from django.http  import HttpResponse,Http404
+from decouple import config,Csv
 
 
 # Create your views here.
@@ -13,9 +14,11 @@ def show_images(request):
    
     try:
         images = Images.objects.all()
+        ALLOWED_HOSTS = config('ALLOWED_HOSTS')
+
     except Images.DoesNotExist:
         raise Http404()
-    return render(request,"pics/my_gallery.html", {"images":images})
+    return render(request,"pics/my_gallery.html", {"images":images, "ALLOWED_HOSTS":ALLOWED_HOSTS})
    
    
 def search_results(request):
@@ -31,11 +34,5 @@ def search_results(request):
         message = "You haven't searched for any term"
         return render(request, 'pics/search.html',{"message":message})
 
-def gallery(request,images_id):
-    try:
-        gallery = Images.objects.get(id = images_id)
-    except Images.DoesNotExist:
-        raise Http404()
-    return render(request,"pics/my_gallery.html", {"gallery":images})
 
-   
+

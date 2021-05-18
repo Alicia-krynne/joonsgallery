@@ -8,17 +8,6 @@ from django import forms
 
 # Create your models here.
 
-class User(models.Model):
-  first_name = models.CharField(max_length =30)
-  last_name = models.CharField(max_length =30)
-  email = models.EmailField()
-
-  def __str__(self):
-        return self.first_name
-
-  def save_user(self):
-      self.save()
-
 
 class Images(models.Model):
     image= models.ImageField(upload_to="media/")
@@ -26,9 +15,8 @@ class Images(models.Model):
     description= models.TextField(max_length=600)
     category = models.ForeignKey('Category',models.SET_NULL,null=True)
     location = models.ForeignKey('Location',models.SET_NULL,null=True)
-    user = models.ForeignKey(User,on_delete=models.CASCADE) 
     
-   
+    
     def __str__(self):
         return self.title
 
@@ -49,19 +37,36 @@ class Images(models.Model):
 
 class Category(models.Model): 
     category= models.CharField(max_length=200)
+   
+
+    def save_category(self):
+        self.save()
+
+    @classmethod
+    def delete_category(cls,category):
+        cls.objects.filter(category=category).delete()
+
+
 
     def __str__(self):
         return self.category
 
-class Location(models.Model): 
-    location= models.CharField(max_length=200)
+class Location(models.Model):
+    location = models.CharField(max_length=100)
 
     def __str__(self):
         return self.location
 
+    class Meta:
+        ordering = ['location']
+
+    def save_location(self):
+        self.save()
+
+    @classmethod
+    def delete_location(cls,location):
+        cls.objects.filter(location=location).delete()
 
 
-# class Address(forms.Form):
-#   city = forms.CharField()
-#   location = PlainLocationField(based_fields=['city'],
-#   initial=Point(-49.1607606, -22.2876834))
+
+

@@ -60,7 +60,7 @@ body{
 
   background-position:0% 51%;
   background-size:cover;
-  background-repeat:repeat}
+  background-repeat:repeat
 }
 img {
   opacity: 1;
@@ -99,5 +99,5 @@ img {
 .modal-body{
   background-color: black;
   background-color: rgba(0,0,0, 0.9);
-
+}
 

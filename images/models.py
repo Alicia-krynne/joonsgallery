@@ -16,7 +16,6 @@ class Images(models.Model):
     category = models.ForeignKey('Category',models.SET_NULL,null=True)
     location = models.ForeignKey('Location',models.SET_NULL,null=True)
     
-    
     def __str__(self):
         return self.title
 

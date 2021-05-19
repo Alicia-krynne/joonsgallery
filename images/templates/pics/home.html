@@ -3,13 +3,12 @@
  {% block content %}
 
   <body>
-    
-      <div class="btn btn-secondary">
-        <a href="{% url 'myGallery' %}"><button class="btn">HOME</button></a>
-              <br>    
+<div class="container"> 
+    <nav> 
+      <div class="btn ">
+        <a href="{% url 'myGallery' %}"><button class="btn">HOME</button></a> 
       </div>
-      <div class="btn btn-secondary">
-              <br>    
+      <div class="btn">
         <a href="{%url 'showImages' %}"><button class="btn">GALLERY</button></a>     
       </div>
 
@@ -29,7 +28,28 @@
           </div>
         </div>
       </div>
+
+    </nav>
+  </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-10">
+      <div class="about">
+          <h2> <strong>ABOUT JOONS GALLERY</strong></h2> 
+          
+            <p>  This is an apllication that allows users to   add images of their  favorite things and display them in a gallery.  </p>
+            <p> You can pictures of  your favorite things here and  be able to documents all your experiences. the app allows ou  to even pick a location 
+              of whee  your most cherished momment  happened.
+            </p>
+
+            <p>photos help us relive our ,most  precious times. </p>
+
+        </div>
+      </div>
+  </div>
+</div>
+ 
     
-    
+
   </body>
 {% endblock %}

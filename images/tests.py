@@ -15,11 +15,23 @@ class ImagesTestClass(TestCase):
         self.image = Images(id=1,title="Slide Away",Category=self.test_category,location=self.location,)
         self.image.save_image()
     
-def test_save_image(self):
-    self.image.save_image()
-    image = Images.objects.all()
-    self.assertTrue(len(image) > 0)
+    def test_save_image(self):
+        self.image.save_image()
+        image = Images.objects.all()
+        self.assertTrue(len(image) > 0)
 
+
+    def test_delete_image(self):
+        self.image.delete_image()
+        image=Images.objects.all()
+        self.assertTrue(len(image)==0)
+
+    def test_update_image(self):
+        self.image.update_image()
+        image=Images.objects.all()
+        self.assertTrue(len(image)>1)
+
+    
 
 class LocationTestClass(TestCase):
     def setUp(self):

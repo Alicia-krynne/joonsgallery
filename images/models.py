@@ -42,10 +42,9 @@ class Images(models.Model):
 
     @classmethod
     def get_image_by_id(id,search_term):
-        images= id.objects.filter(title__icontains=search_term)
+        images= Images.objects.filter(id=id).all()
         return images
-
-
+   
     @classmethod
     def filter_by_location(Location,search_term):
         images= Location.objects.filter(title__icontains=search_term)

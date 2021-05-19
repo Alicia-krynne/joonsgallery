@@ -18,6 +18,12 @@ class Images(models.Model):
     
     def __str__(self):
         return self.title
+    
+    def save_image(self):
+          self.save()
+        
+    def update_image(self):
+        self.save()
 
     @classmethod
     def my_gallery(cls):
@@ -30,9 +36,27 @@ class Images(models.Model):
         return images
 
     @classmethod
-    def search_by_title(cls,search_term):
-        images= cls.objects.filter(title__icontains=search_term)
+    def search_image(Category,search_term):
+        images= Category.objects.filter(title__icontains=search_term)
         return images
+
+    @classmethod
+    def get_image_by_id(id,search_term):
+        images= id.objects.filter(title__icontains=search_term)
+        return images
+
+
+    @classmethod
+    def filter_by_location(Location,search_term):
+        images= Location.objects.filter(title__icontains=search_term)
+        return images
+
+    @classmethod
+    def delete_image(cls):
+        cls.objects.filter(Images=Images).delete()
+        
+
+
 
 class Category(models.Model): 
     category= models.CharField(max_length=200)

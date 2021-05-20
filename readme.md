@@ -11,7 +11,6 @@ This is an apllication that allows users to   add images of their  favorite thin
 CLONNG THE  REPOSITORY:
 https://github.com/Alicia-krynne/joonsgallery
 Move to the folder and install requirements
-cd pitch pitch-app
 pip install -r requirements.txt (to  install dependecies)
 Exporting Configurations
 Running the application

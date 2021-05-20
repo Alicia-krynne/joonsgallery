@@ -10,14 +10,14 @@ This is an apllication that allows users to   add images of their  favorite thin
 
 CLONNG THE  REPOSITORY:
 https://github.com/Alicia-krynne/joonsgallery
-Move to the folder and install requirements
-pip install -r requirements.txt (to  install dependecies)
-Exporting Configurations
-Running the application
-python3 manage.py runserver
-Testing the application
-python3 manage.py test
-to  run  the  admin page , run python3 createsuperuser and  create new  admin  credentials
+1. Move to the folder and install requirements
+2. pip install -r requirements.txt (to  install dependecies)
+3. Exporting Configurations
+4. Running the application
+5. python3 manage.py runserver
+6. Testing the application
+7. Python3 manage.py test
+8. To  run  the  admin page , run python3 createsuperuser and  create new  admin  credentials
 
 
 Technology used
